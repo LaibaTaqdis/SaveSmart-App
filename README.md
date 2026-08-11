@@ -1,4 +1,4 @@
-# SaveSmart 💰
+# SaveSmart
 
 **A gamified personal savings and financial literacy app for young adults in Pakistan.**
 
@@ -8,7 +8,7 @@ SaveSmart combines AI-generated quizzes, daily savings challenges, a points/leve
 
 ---
 
-## 📱 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -27,7 +27,7 @@ SaveSmart combines AI-generated quizzes, daily savings challenges, a points/leve
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 SaveSmart-App/
@@ -57,7 +57,7 @@ SaveSmart-App/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Prerequisites
 
@@ -126,7 +126,7 @@ Scan the QR code with Expo Go, or press `a` / `i` in the terminal to launch an A
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 All variables are prefixed `EXPO_PUBLIC_` so Expo exposes them to client code at build time. Copy `.env.example` to `.env` and fill in the values below.
 
@@ -147,7 +147,7 @@ The app is designed to fail gracefully: if `EXPO_PUBLIC_GROQ_API_KEY` is missing
 
 ---
 
-## 🔐 Security Notice — Firebase Admin SDK Keys
+##  Security Notice — Firebase Admin SDK Keys
 
 **Never place a Firebase Admin SDK service account JSON file (e.g. `savesmartapp-...-firebase-adminsdk-....json`) anywhere in this project.** That file grants full administrative access to your Firebase project (bypassing all security rules) and is meant for trusted server-side code only — never for a mobile client app, and never committed to a repo or shared in a zip.
 
@@ -157,7 +157,7 @@ If an Admin SDK key was ever generated or shared for this project, go to **Fireb
 
 ---
 
-## 🧠 AI Integration
+##  AI Integration
 
 `src/services/api/groqClient.ts` is the low-level HTTP client: it reads `EXPO_PUBLIC_GROQ_API_KEY`/`_MODEL`/`_API_URL`, enforces an **8-second timeout** via `AbortController`, and normalizes all failures into a `GroqApiError`.
 
@@ -168,7 +168,7 @@ If an Admin SDK key was ever generated or shared for this project, go to **Fireb
 
 ---
 
-## 🏆 Gamification Engine
+##  Gamification Engine
 
 Implemented in `src/utils/gamification.ts` as pure, testable functions:
 
@@ -181,7 +181,7 @@ These are called from `firestoreService.ts` whenever points are awarded or a cha
 
 ---
 
-## 🔒 Security Notes
+##  Security Notes
 
 - Firebase credentials and the Groq API key are read from environment variables only — never hard-coded.
 - `firestore.rules` restricts each user to reading/writing only their own documents (see the file for full rules).
@@ -189,13 +189,13 @@ These are called from `firestoreService.ts` whenever points are awarded or a cha
 
 ---
 
-## 🗺️ Architecture Diagram
+##  Architecture Diagram
 
 For the full system architecture diagram (Mobile App Layer, Firebase Backend, AI Layer, Notification Service, and data flow), see the accompanying project planning document / the architecture section of the final project report submitted alongside this codebase.
 
 ---
 
-## 📌 Known Limitations / Next Steps
+##  Known Limitations / Next Steps
 
 - **Google Sign-In** is scaffolded via the `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID` env variable but requires platform-specific native configuration (see the [`expo-auth-session` Google guide](https://docs.expo.dev/guides/google-authentication/)) to fully enable.
 - **PDF report export** in `profile.tsx` is stubbed with a placeholder — wire it to a PDF-generation library (e.g. `expo-print` + `expo-sharing`) to produce a real downloadable file.
@@ -203,7 +203,7 @@ For the full system architecture diagram (Mobile App Layer, Firebase Backend, AI
 
 ---
 
-## 📄 License
+##  License
 
 MIT License
 
